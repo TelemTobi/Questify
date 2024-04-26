@@ -9,30 +9,67 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
 
+    @State var degreesRotating = 0.0
+    
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+        GeometryReader { geometry in
+            NavigationSplitView {
+                List {
+                    ForEach(items) { item in
+                        NavigationLink {
+                            Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        } label: {
+                            Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        }
+                    }
+                    .onDelete(perform: deleteItems)
+                }
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button(action: addItem) {
+                            Image(systemName: "plus")
+                        }
+                    }
+                    
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button(action: {}) {
+                            Image(systemName: "gear")
+                        }
                     }
                 }
-                .onDelete(perform: deleteItems)
+            } detail: {
+                Text("Select an item")
             }
-            .toolbar {
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+            .background {
+                let viewSize = CGSize(width: geometry.size.width * 1.5, height: geometry.size.height * 3)
+                
+                ZStack {
+                    ForEach(0..<10, id: \.self) { index in
+                        let randomSize = CGFloat.random(in: 50...800)
+                        let randomX = CGFloat.random(in: 0...viewSize.width)
+                        let randomY = CGFloat.random(in: 0...viewSize.height)
+                        let randomOpacity = CGFloat.random(in: 0.3...1)
+                        
+                        Color.blue
+                            .frame(width: randomSize, height: randomSize)
+                            .clipShape(.circle)
+                            .position(x: randomX, y: randomY)
+                            .opacity(randomOpacity)
                     }
                 }
+                .frame(width: viewSize.width, height: viewSize.height)
+                .overlay(.ultraThinMaterial)
+                .rotationEffect(.degrees(degreesRotating))
             }
-        } detail: {
-            Text("Select an item")
+            .onAppear {
+                withAnimation(.linear(duration: 10).speed(0.2).repeatForever(autoreverses: false)) {
+                    degreesRotating = 360
+                }
+            }
         }
     }
 
