@@ -10,6 +10,7 @@ import SwiftData
 
 @main
 struct QuestifyApp: App {
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -26,6 +27,7 @@ struct QuestifyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .background { AppBackgroundView() }
         }
         .modelContainer(sharedModelContainer)
     }

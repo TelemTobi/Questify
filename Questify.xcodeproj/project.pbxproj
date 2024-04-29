@@ -13,6 +13,10 @@
 		7DEE4BB82BDB7B9A005DD39C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DEE4BB72BDB7B9A005DD39C /* Assets.xcassets */; };
 		7DEE4BBB2BDB7B9A005DD39C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DEE4BBA2BDB7B9A005DD39C /* Preview Assets.xcassets */; };
 		7DEE4BC52BDB7B9A005DD39C /* QuestifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4BC42BDB7B9A005DD39C /* QuestifyTests.swift */; };
+		7DEE4BE02BDB9F2F005DD39C /* FloatingPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4BDF2BDB9F2F005DD39C /* FloatingPoint+Extension.swift */; };
+		7DEE4BE22BDBC074005DD39C /* Comparable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4BE12BDBC074005DD39C /* Comparable+Extension.swift */; };
+		7DEE4BE42BDBC7E6005DD39C /* AppBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4BE32BDBC7E6005DD39C /* AppBackgroundView.swift */; };
+		7DEE4BE62BDCD1C8005DD39C /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE4BE52BDCD1C8005DD39C /* CountdownView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,10 @@
 		7DEE4BBA2BDB7B9A005DD39C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7DEE4BC02BDB7B9A005DD39C /* QuestifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuestifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEE4BC42BDB7B9A005DD39C /* QuestifyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestifyTests.swift; sourceTree = "<group>"; };
+		7DEE4BDF2BDB9F2F005DD39C /* FloatingPoint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		7DEE4BE12BDBC074005DD39C /* Comparable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+Extension.swift"; sourceTree = "<group>"; };
+		7DEE4BE32BDBC7E6005DD39C /* AppBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackgroundView.swift; sourceTree = "<group>"; };
+		7DEE4BE52BDCD1C8005DD39C /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,11 +83,14 @@
 		7DEE4BB02BDB7B98005DD39C /* Questify */ = {
 			isa = PBXGroup;
 			children = (
-				7DEE4BB12BDB7B98005DD39C /* QuestifyApp.swift */,
-				7DEE4BB32BDB7B98005DD39C /* ContentView.swift */,
-				7DEE4BB52BDB7B98005DD39C /* Item.swift */,
-				7DEE4BB72BDB7B9A005DD39C /* Assets.xcassets */,
-				7DEE4BB92BDB7B9A005DD39C /* Preview Content */,
+				7DEE4BE72BDF57D1005DD39C /* App */,
+				7DEE4BE82BDF57E2005DD39C /* Models */,
+				7DEE4BEA2BDF57F2005DD39C /* Modules */,
+				7DEE4BE92BDF57EB005DD39C /* Navigators */,
+				7DEE4BEB2BDF57F7005DD39C /* Networking */,
+				7DEE4BEC2BDF5816005DD39C /* Support */,
+				7DEE4BED2BDF581C005DD39C /* Utility */,
+				7DEE4BEE2BDF5825005DD39C /* Views */,
 			);
 			path = Questify;
 			sourceTree = "<group>";
@@ -98,6 +109,95 @@
 				7DEE4BC42BDB7B9A005DD39C /* QuestifyTests.swift */,
 			);
 			path = QuestifyTests;
+			sourceTree = "<group>";
+		};
+		7DEE4BDD2BDB9F1B005DD39C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE4BDE2BDB9F20005DD39C /* Foundation */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7DEE4BDE2BDB9F20005DD39C /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE4BE12BDBC074005DD39C /* Comparable+Extension.swift */,
+				7DEE4BDF2BDB9F2F005DD39C /* FloatingPoint+Extension.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		7DEE4BE72BDF57D1005DD39C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE4BB12BDB7B98005DD39C /* QuestifyApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7DEE4BE82BDF57E2005DD39C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE4BB52BDB7B98005DD39C /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7DEE4BE92BDF57EB005DD39C /* Navigators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigators;
+			sourceTree = "<group>";
+		};
+		7DEE4BEA2BDF57F2005DD39C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE4BB32BDB7B98005DD39C /* ContentView.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		7DEE4BEB2BDF57F7005DD39C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7DEE4BEC2BDF5816005DD39C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE4BEF2BDF5839005DD39C /* Resources */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		7DEE4BED2BDF581C005DD39C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE4BDD2BDB9F1B005DD39C /* Extensions */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		7DEE4BEE2BDF5825005DD39C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE4BE32BDBC7E6005DD39C /* AppBackgroundView.swift */,
+				7DEE4BE52BDCD1C8005DD39C /* CountdownView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7DEE4BEF2BDF5839005DD39C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE4BB92BDB7B9A005DD39C /* Preview Content */,
+				7DEE4BB72BDB7B9A005DD39C /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +300,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DEE4BE22BDBC074005DD39C /* Comparable+Extension.swift in Sources */,
 				7DEE4BB42BDB7B98005DD39C /* ContentView.swift in Sources */,
 				7DEE4BB62BDB7B98005DD39C /* Item.swift in Sources */,
+				7DEE4BE62BDCD1C8005DD39C /* CountdownView.swift in Sources */,
+				7DEE4BE42BDBC7E6005DD39C /* AppBackgroundView.swift in Sources */,
+				7DEE4BE02BDB9F2F005DD39C /* FloatingPoint+Extension.swift in Sources */,
 				7DEE4BB22BDB7B98005DD39C /* QuestifyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,7 +455,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Questify/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Questify/Support/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 765F9357QN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -379,7 +483,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Questify/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Questify/Support/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 765F9357QN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
